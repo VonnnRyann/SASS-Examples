@@ -1,0 +1,82 @@
+@import 'style2';
+
+$color: honeydew;
+$bcolor: gray;
+$font: monospace;
+$fontsize: 50px;
+$hover:hotpink;
+
+h1 {
+    font-family: $font;
+    font-size: $fontsize;
+    color: $color;
+}
+body {
+    background-color: $bcolor;
+}
+nav {
+    background-color: red;
+    ul {
+        color: white;
+        border: 1px black solid;
+        li {
+            color: green;
+            ul {
+                background-color: greenyellow;
+            }
+        }
+    }
+}
+
+button {
+    background-color: rosybrown;
+    &:hover {
+        background-color: $hover;
+    }
+}
+
+%number {
+    background-color: white;
+    height:200px;
+    width: 200px;
+    border: 2px solid black;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one {
+    @extend %number;
+}
+.two {
+    @extend %number;
+    background-color: aqua
+}
+.three {
+    @extend %number;
+    &:hover {
+        background-color: blueviolet;
+        border-radius: 50%;
+    }
+}
+
+@mixin colorme($color) {
+    border: 3px solid black;
+    background-color: $color;
+    color: $color;
+    height: 200px;
+    width: 200px;
+    margin: 2%;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.p1 {
+    @include colorme($color);
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
